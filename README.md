@@ -1,13 +1,12 @@
 ---
-# 프로젝트 주제
-![header](https://capsule-render.vercel.app/api?type=venom&color=0:FC4100,100:b678c4&height=200&section=header&text=자율주행%20로봇%20기반%20지능형%20운반%20시스템&fontSize=40)
-
+# 프로젝트 주제 (ROS Turtlebot을 활용한 프로젝트)
 ---
-## 작품 기간 : 24.03.01 ~ 24.03.31
-![개발](https://github.com/BChanGod/BChanGod_Device.github.io/blob/main/%EC%82%B0%EB%B6%88%EA%B0%90%EC%A7%80_%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A0%95.jpg)
+![header](https://capsule-render.vercel.app/api?type=venom&color=0:B6FFFA,100:80B3FF&height=200&section=header&text=자율주행%20로봇%20기반%20지능형%20운반%20시스템&fontSize=40)
+---
+## 작품 기간 : 24.06.03 ~ 24.07.10
+![image](https://github.com/user-attachments/assets/9c66d258-1c28-4061-ad8c-472d166aa00f)
 ---
 ## 주제 선정 배경
-![산림청_자료](https://github.com/BChanGod/2024_ICT_Project/assets/159971128/afa049f9-28f3-4954-8455-0f7ea5eada07)
 
 전 세계적인 기후 변화로 산불 발생 빈도와 규모가 커지는 추세이고, 봄철의 경우 건조하여 산불 발생 빈도가 높다.
 <br>
