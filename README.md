@@ -1,84 +1,73 @@
-# 인텔리전트ROS_운송_시스템
+---
+# 프로젝트 주제
+![header](https://capsule-render.vercel.app/api?type=venom&color=0:FC4100,100:b678c4&height=200&section=header&text=자율주행%20로봇%20기반%20지능형%20운반%20시스템&fontSize=40)
 
 ---
-# Project Topic
+## 작품 기간 : 24.03.01 ~ 24.03.31
+![개발](https://github.com/BChanGod/BChanGod_Device.github.io/blob/main/%EC%82%B0%EB%B6%88%EA%B0%90%EC%A7%80_%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A0%95.jpg)
 ---
-![서문](https:/ 캡슐 - 렌더.vercel.app/api?type= venom&color= 0:3ABEF9,100:b678c4&높이=200§이온=header&text=자율%20주행%20로봇%20기반%20지능형%20운반%20시스템&폰츠사이즈=40)
----
-## 공사기간 : 24.04.15 ~ 24.04.22
----
-## 주제 선택 배경
-저희는 운동에 관심이 많다 보니 운동을 할 때 불편한 점이 무엇일까 고민하다가 STM32 MCU로 구현할 운동 기계를 생각했습니다.
+## 주제 선정 배경
+![산림청_자료](https://github.com/BChanGod/2024_ICT_Project/assets/159971128/afa049f9-28f3-4954-8455-0f7ea5eada07)
+
+전 세계적인 기후 변화로 산불 발생 빈도와 규모가 커지는 추세이고, 봄철의 경우 건조하여 산불 발생 빈도가 높다.
 <br>
 
-헬스장에는 대표적인 유산소 운동기구로 러닝머신이 있습니다. 하지만 기존 러닝머신이 운동을 마치고 기계를 종료하면 더 이상 운동 기록을 볼 수 없게 되어 운동을 하면서 신체의 성장이나 운동 계획의 진행을 이해하기가 어려워집니다.
+우리나라의 경우 2023년 크고 작은 산불이 569건 발생하여 4,992ha의 산림이 소실되었고, 산불이 번져 주택과 시설, 인명 피해까지 일어난다.
 <br>
 
-이 때문에 운동 후에도 개인이나 서버에 운동 기록을 저장하면 운동 계획과 목표를 세우고 달성할 수 있으며, 건강 관리나 운동 루틴을 만들고 자신이 성장하는 모습을 보면서 운동을 즐길 수 있습니다.
+이 설비는 산림 인접 주택이나 시설을 시작으로 점차 확대될 것이지만, 수동으로 동작하다 보니 주 부재 시 대응하기 힘들다는 문제점이 있어 센서들과 AI, 다양한 첨단 기술을 이용해 화재를 막기 위해 주택과 시설 주변에 수막 설비 시스템을 설치하고 불이 붙지 못하도록 한다.
 
 ## 기술 구현 목표
-<Using STM32 MCU 키트>
-1. DC 모터를 사용한 런닝 머신 구현
-2. Push Button으로 런닝머신 기능 추가<br>
-(Start/Stop 1, Speed Down 2(--), Speed up 3(++ PWM 제어)
-3.LCD에 출력되는 Kcal(km), Kcal는 평균 중량을 기준으로 계산됩니다<br>
-(Km = speed x time, Kcal = 0.0157*((0.1 * speed + 3.5) / 3.5) * weight * time)
-4.Array FND는 UpCount를 4자리 FND까지 구현하고 Motor가 작동 중인 경우에만 Count 기능을 추가합니다.
-5.BlueTooth로 DB에 결과 전송
+1. 가스 센서, 적외선 불꽃 감지 센서, 온/습도 센서로 산불 초기 감지 > wifi와 통신하는 센서 값과 GPS 위치를 DB에 데이터 전송
+2. 산불과 연기를 학습한 카메라가 산불 인식 > DB에 센서 데이터 전송
+3. 화재 인식과 동시에 Buzzer가 울리면서 LED 점멸(경고, 대피용), 소방당국이 DB를 통해 실시간 정보와 GPS로 위치를 확인할 수 있다.
+4. 수막 설비 시스템 동작 > DB로 Actuator 데이터 전송
+5. DB를 소방서와 공유 > 화재가 감지된 장소로 이동
+6. 불이 진압 되면 수막 설비 시스템 종료
 
-<Using 아두이노 위원회>
-1. DHT 센서로 온/습도를 측정하여 불쾌지수를 표시합니다.
-2.A/C will be implemented with Servo Motor and A/C operation if the discomfort index is 75 or higher (usually high if the discomfort index is 75 or higher).
-3.Send sensor data to DB with WIFI
+## 기대 효과
+- 산불 발생 시 초기에 감지 및 진화하여 산불 확산을 사전에 방지한다.
+- 사람 눈으로 산불 발견이 어려운 만큼 IoT 센서와 딥러닝으로 학습된 카메라를 통해 이중으로 감지한다.
+- 자동화된 시스템을 통해 산불이 마을로 접근하는 경우 주민들의 대피 시간을 확보하며 물적 피해 또한 줄인다.
 
-< RaspberryPi DB 구축 >
-1. Create a DB using MariaDB
-2.Machine table, A/C table and receive data every n seconds
-3. Table PHP, graph visualization
+<br>
 
-<Android 앱. >
-1. Sensor sent to DB, actuator data value in app
--데이터 방식은 Clean@temp/humi/disgusting index, Machine@Km@Kcal@time 입니다.
+**위의 효과로 대피 시간 확보와 산불 번짐을 저지 및 둔화 시킬 수 있으며, 적은 인원으로 효율적인 시스템 관리와 소방산업 활성화의 기여할 것**
 
 ---
-## Configuration diagram
-![이미지](https://github.com/BChanGod/HealthCareSystem/assets/159971128/7bb57cba-f162-4255-adbf-fbfcb36f936d)
-## 하드웨어
-![이미지](https://github.com/BChanGod/HealthCareSystem/assets/159971128/dffa27f8-3e7c-45a3-bfc4-4f95e32a5787)
-## op/humidity 센서로 불쾌지수 측정
-![이미지](https://github.com/BChanGod/HealthCareSystem/assets/159971128/41df776a-a675-433c-b379-0db9db23b340)
-## Android 앱에서 센서, 액추에이터 데이터 생성
-![이미지](https://github.com/BChanGod/HealthCareSystem/assets/159971128/13187e5f-c8c2-4ef4-ae5c-64846ae80763)
-## 기계 표 DB
-![이미지](https://github.com/BChanGod/HealthCareSystem/assets/159971128/1a1070b7-8b4c-459b-aae2-bffb2de40046)
-## 에어컨 테이블 DB
-![이미지](https://github.com/BChanGod/HealthCareSystem/assets/159971128/3b9494df-6e19-4779-9d35-028bb00c30ba)
+## 시스템 구성도
+![시스템 구성도](https://github.com/BChanGod/2024_ICT_Project/assets/159971128/24445863-9642-4c8f-919d-c142f1277235)
+
+## FlowChart
+![전체시스템_flowchart](https://github.com/BChanGod/2024_ICT_Project/assets/159971128/3566f506-eee6-4758-8099-bc9f8d10f24b)
+
 ---
 ## 개발 환경
-| 위원회 | 아두이노. | STM32 MCU KIT | 복분자 파이|
+| Board | Arduino | Jetson Nono | Raspberry Pi|
 | --- | --- | --- | --- |
-|언어 | C++ |C/C++ |C, PHP|
-|OS | Windows | RaspberryPi, Linux|
-|시스템 | 아두이노 IDE | STM32CubeIDE | 안드로이드, APACH, 마리아DB|
+| Language | C++ |Python|C, PhP|
+| OS |Windows|NVIDIA JetPack|RaspberryPi, linux|
+| Library |DHT, SerialSoftWare, WiFiEsp, TinyGps, I2C|OpenCV, Yolov5|sys/socket, type, stdio, pthread, netinet/in.sys/stat, arpa/inet|
+| System | Arduino |VSCode|GCC, APACHE, MariaDB|
 
-## 프로젝트팀원
-|  | 이름. | 역할공유 |
+## 프로젝트 팀원
+|  | 이  름 | 역할 분담 |
 | --- | --- | --- |
-|팀원 | 구주헌 | STM32CubeIDE Running Machine 구현, DB 생성, 데이터 시각화, Android|
-
-## 문제
-Bluetooth 모듈을 사용한 메시지 전송이 제대로 처리되지 않을 때 문제가 발생합니다.
-![이미지](https://github.com/BChanGod/HealthCareSystem/assets/159971128/3760d6c1-9c95-46dd-b0e9-633b5006f67e)
-
-## 솔루션플랜
-Delay를 주어 해결
-![이미지](https://github.com/BChanGod/HealthCareSystem/assets/159971128/88fb59f2-a934-420e-8faa-a6607d389b07)
+| 팀장 | 이병찬 |Data Set Yolov5 딥러닝 모델을 이용하여 AI 학습, Arduino Actuator, 통신부, H/W 제작|
+| 팀원 | 김민환 |Arduino Sensor, Actuator, 통신부, 구성도 및 FlowChart 제작|
+| 팀원 | 한민규 |MariaDB DB 생성, data 시각화, 학습된 AI를 Jetson nano Cam으로 검증|
 
 ## 향후 목표
-1. 웨어러블을 접목하여 심박 측정 기능 추가
-2.운동 앱으로 운동기구 제어기능 추가
-3. anaerobic운동기록 측정
+AI를 활용한 산불 감지 수막 설비 시스템에서는 수막 설비를 대신하여 모터 펌프를 사용하고 일반 웹캠으로 산불을 감지하였으며, 외부 환경 변화가 적은 실내에서 시연을 진행하였다. 이점을 보완하여 상용화하기 위해서는 아래와 같은 향후 목표를 제안한다.
 
-## references, literature
-불쾌지수 > 생활기상지수 > 도움말 (weather.go.kr)
-![image](https://github.com/BChanGod/HealthCareSystem/assets/159971128/0f53c483-f3a0-47d7-b963-3881681d64bf)
+1) 센서 변경 및 추가
+ 탐지 거리가 짧은 불꽃 감지 센서를 긴 거리를 인식할 수 있는 센서로 교체하고, 산불에서 발생하는 일산화탄소와 같은 유독 가스를 감지할 수 있는 센서를 추가해 아두이노 센서 부에서 보내는 데이터의 신뢰도를 높일 수 있을 것이다.
+
+2) 빅데이터 활용 기술 적용
+ 센서 부를 통해 얻은 온도 및 습도 및 환경데이터를 활용해서 산불의 발생 가능성이 얼마나 되는지를 분석하고, 이를 바탕으로 경고 및 예방 시스템을 구축하면 산불의 피해를 줄일 수 있을 것이다.
+
+3) 에너지 효율성 개선
+ 전력 소비를 최소화하기 위해서, 하드웨어적으로 저전력 센서 사용, 태양광 및 신재생에너지를 활용해서 시스템에 필요한 전력을 공급하고, 젯슨 나노와 액추에이터와 같이 비활성 상태일 때의 전력 소비를 줄이기 위해서 Sleep Mode를 활용해 시스템을 장기간에 걸쳐 운영할 수 있을 것이다.
+
+4) 설비 비용 개선
+ 기존 주택에 설치되어있는 물탱크와 스프링클러 시스템, 분기 배관 등을 활용해 설치비를 절감시키며 정기적인 유지 보수 또한 쉬워 시설 유지비가 줄어들어 경제적 효용성을 확보할 수 있을 것이다.
