@@ -52,8 +52,8 @@ ROS Turtlebot3를 활용하여 자율주행이 가능한 무인 운반 시스템
 ## 프로젝트 팀원
 |  | 이  름 | 역할 분담 |
 | --- | --- | --- |
-| 팀장 | 이유진 | ROS Turtlebot3 자율주행 구현 및 제어, 시스템 인터페이스 구현, QT GUI 설계 및 개발 |
-| 팀원 | 권유진 | ROS Turtlebot3 자율주행 구현 및 제어, 시스템 인터페이스 구현, QT GUI 설계 및 개발 |
-| 팀원 | 신혜원 | STM32 Cortex-M4 Linear Actuator, Bluetooth |
-| 팀원 | 이병찬 | ROS Turtlebot3 자율주행 구현 및 제어, 시스템 인터페이스 구현, QT GUI 설계 및 개발 |
-| 팀원 | 정우택 | STM32 Cortex-M4 Linear Actuator, Bluetooth |
+| 팀장 | 이유진 | ROS Turtlebot3 자율주행 구현 및 제어, 시스템 인터페이스 구현, QT GUI 설계, 프로젝트 계획 및 내용 정리, 모형 제작 |
+| 팀원 | 권유진 | ROS Turtlebot3 자율주행 구현 및 제어, 시스템 인터페이스 구현, QT GUI 설계 및 개발, 모형 제작 |
+| 팀원 | 신혜원 | STM32 Cortex-M4 Linear Actuator, STM32와 Bluetooth 통신 |
+| 팀원 | 이병찬 | ROS Turtlebot3 자율주행 구현 및 제어, 시스템 인터페이스 구현, QT GUI 설계 및 개발, ROS와 QT간 Socket 통신 |
+| 팀원 | 정우택 | STM32 Cortex-M4 Linear Actuator, Linear와 BlueTooth간 Socket 통신 |
